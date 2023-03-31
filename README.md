@@ -1,6 +1,7 @@
 # NoSQL Challenge: Social Network API
 
-![Social Network API Banner](banner.png)
+![social-net-solution_icon6](https://user-images.githubusercontent.com/113915529/228991431-569833c3-27bf-424c-901a-66d4262aab52.svg)
+
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -18,12 +19,11 @@
 The **NoSQL Challenge: Social Network API** is a robust and scalable API designed for a modern social network application. Built with cutting-edge technologies and utilizing the flexibility and performance of NoSQL databases, it provides a reliable and efficient backend for any social network project.
 
 ## Features
-- User registration and authentication
 - CRUD operations for user profiles
 - Adding and removing friends
-- Creating, updating, and deleting posts
-- Commenting on and reacting to posts
-- Pagination and filtering for efficient data retrieval
+- Adding and removing reactions
+- Creating, updating, and deleting thoughts
+- Creating, updating, and deleting users
 
 ## Technologies
 - Node.js
@@ -31,7 +31,7 @@ The **NoSQL Challenge: Social Network API** is a robust and scalable API designe
 - MongoDB
 - Mongoose
 - JSON Web Tokens (JWT)
-- bcrypt
+
 
 ## Requirements
 - Node.js v14.x or higher
@@ -41,8 +41,8 @@ The **NoSQL Challenge: Social Network API** is a robust and scalable API designe
 ## Installation
 1. Clone the repository:
 
-- git clone https://github.com/yourusername/social-network-api.git
-- cd social-network-api
+- git clone https://github.com/naodhu/Social-Network.git
+- cd Social-network
 
 2. Install the dependencies:
 
@@ -55,7 +55,7 @@ The **NoSQL Challenge: Social Network API** is a robust and scalable API designe
 
 
 ## Usage
-To interact with the API, you can use tools like Postman or Curl. The API documentation with all available endpoints and their respective requests/responses can be found [here](API_DOCS.md).
+To interact with the API, you can use tools like Insomenia. 
 
 ## Demo
 A live demo of the API is available at: [https://social-network-api-demo.herokuapp.com](https://social-network-api-demo.herokuapp.com)
