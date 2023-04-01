@@ -1,16 +1,9 @@
 const { User, Thought } = require("../models");
+const { OjectId } = require("mongoose").Types;
 
 const userController = {
   getAllUsers(req, res) {
     User.find({})
-      .populate({
-        path: "thoughts",
-        select: "-__v",
-      })
-      .populate({
-        path: "friends",
-        select: "-__v",
-      })
       .select("-__v")
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => {
@@ -21,14 +14,6 @@ const userController = {
 
   getUserById({ params }, res) {
     User.findOne({ _id: params.id })
-      .populate({
-        path: "thoughts",
-        select: "-__v",
-      })
-      .populate({
-        path: "friends",
-        select: "-__v",
-      })
       .select("-__v")
       .then((dbUserData) => {
         if (!dbUserData) {
@@ -45,7 +30,11 @@ const userController = {
 
   createUser({ body }, res) {
     User.create(body)
-      .then((dbUserData) => res.json(dbUserData))
+      .then((dbUserData) =>
+        res
+          .status(200)
+          .json({ message: "User has been created", data: dbUserData })
+      )
       .catch((err) => res.status(400).json(err));
   },
 
@@ -59,7 +48,9 @@ const userController = {
           res.status(404).json({ message: "No user found with this id!" });
           return;
         }
-        res.json(dbUserData);
+        res
+          .status(202)
+          .json({ message: "User has been updated", data: dbUserData });
       })
       .catch((err) => res.status(400).json(err));
   },
@@ -92,7 +83,12 @@ const userController = {
           res.status(404).json({ message: "No user found with this id!" });
           return;
         }
-        res.json(dbUserData);
+        const friendCount = dbUserData.friends.length;
+        res.status(200).json({
+          message: "Friend has been added ",
+          friendCount,
+          data: dbUserData,
+        });
       })
       .catch((err) => res.status(400).json(err));
   },
@@ -108,7 +104,7 @@ const userController = {
           res.status(404).json({ message: "No user found with this id!" });
           return;
         }
-        res.json(dbUserData);
+        res.status(202).json({ message: "Friend has been removed " });
       })
       .catch((err) => res.status(400).json(err));
   },
