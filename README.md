@@ -3,72 +3,87 @@
 ![social-net-solution_icon6](https://user-images.githubusercontent.com/113915529/228991431-569833c3-27bf-424c-901a-66d4262aab52.svg)
 
 
+# API for Social Networking Platform
+
+## Overview
+
+This project aims to develop an API for a social media application, enabling users to:
+
+- Create, edit, and delete user accounts
+- Compose, modify, and remove posts 
+- Organize and maintain a list of contacts
+- Interact with friends' posts 
+
+The application will store data in MongoDB, utilizing Mongoose for database operations.
+
+**Additional Feature**: When a user account is removed, all corresponding posts will be deleted from the Post collection as well.
+
+## Useful Links
+
+- [Video Demonstration]()
+- [GitHub Repository]()
+
 ## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies](#technologies)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Demo](#demo)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
 
-## Introduction
-The **NoSQL Challenge: Social Network API** is a robust and scalable API designed for a modern social network application. Built with cutting-edge technologies and utilizing the flexibility and performance of NoSQL databases, it provides a reliable and efficient backend for any social network project.
-
-## Features
-- CRUD operations for user profiles
-- Adding and removing friends
-- Adding and removing reactions
-- Creating, updating, and deleting thoughts
-- Creating, updating, and deleting users
-
-## Technologies
-- Node.js
-- Express
-- MongoDB
-- Mongoose
-- JSON Web Tokens (JWT)
-
-
-## Requirements
-- Node.js v14.x or higher
-- MongoDB v5.x or higher
-- npm v7.x or higher
+1. [Installation](#installation)
+2. [Technologies Employed](#technologies-employed)
+3. [Instructions for Use](#instructions-for-use)
 
 ## Installation
-1. Clone the repository:
 
-- git clone https://github.com/naodhu/Social-Network.git
-- cd Social-network
+The following npm packages are required to run the application:
 
-2. Install the dependencies:
+- `express` v4.18.2
+- `mongoose` v6.9.2
+- `nodemon` v2.0.22 (optional)
 
-3. Create a `.env` file in the root directory and configure the following variables:
-- MONGODB_URI=mongodb://localhost:27017/social-network
-- JWT_SECRET=your_jwt_secret_key
-- PORT=3000
+Install the necessary libraries by executing this command in the root directory:
 
-4. Start the server:
+\```bash
+npm install
+\```
+
+Please note that `nodemon` is referenced in the talkthrough but not included in the video demonstration. To utilize `nodemon`, install the library separately.
+
+## Technologies Employed
+
+- JavaScript
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- Insomnia
+
+## Instructions for Use
+
+Before exploring the API routes with Insomnia, launch the server using one of these commands in your preferred command-line interface:
+
+```bash
+npm start
+```
 
 
-## Usage
-To interact with the API, you can use tools like Insomenia. 
 
-## Demo
-A live demo of the API is available at: [https://social-network-api-demo.herokuapp.com](https://social-network-api-demo.herokuapp.com)
+To examine the API routes, apply the following endpoints:
 
-## Screenshots
-![User Registration](screenshots/user-registration.png)
-![Add Friend](screenshots/add-friend.png)
-![Create Post](screenshots/create-post.png)
-![Comment on Post](screenshots/comment-on-post.png)
+### Account and Contacts
 
-## Contributing
-We welcome contributions from the community. To get started, please fork the repository, create a new branch for your changes, and submit a pull request once your changes are complete and tested.
+- GET all accounts: `/api/users`
+- GET account by userId: `/api/users/:userId`
+- POST (create) new account: `/api/users`
+- PUT (edit) account by userId: `/api/users/:userId`
+- DELETE account by userId: `/api/users/:userId`
+- POST add contact to account: `/api/users/:userId/friends/:friendId` (Note: `friendId` is a separate `userId`)
+- DELETE contact from account's list: `api/users/:userId/friends/:friendId`
 
-## License
-This project is licensed under the MIT License. For more information, please refer to the [LICENSE](LICENSE) file.
+### Post and Interaction
+
+- GET all posts: `/api/thoughts`
+- GET post by thoughtId: `/api/thoughts/:thoughtId`
+- POST (create) new post: `/api/thoughts`
+- PUT (edit) post by thoughtId: `/api/thoughts/:thoughtId`
+- DELETE post by thoughtId: `/api/thoughts/:thoughtId`
+- POST add interaction to post: `/api/thoughts/:thoughtId/reactions`
+- DELETE interaction from post's list: `/api/thoughts/:thoughtId/reactions/:reactionId` (Note: `reactionId` differs from `_id`)
+
 
