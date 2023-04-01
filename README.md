@@ -39,9 +39,9 @@ The following npm packages are required to run the application:
 
 Install the necessary libraries by executing this command in the root directory:
 
-\```bash
+```bash
 npm install
-\```
+```
 
 Please note that `nodemon` is referenced in the talkthrough but not included in the video demonstration. To utilize `nodemon`, install the library separately.
 
