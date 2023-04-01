@@ -73,7 +73,7 @@ To examine the API routes, apply the following endpoints:
 - POST (create) new account: `/api/users`
 - PUT (edit) account by userId: `/api/users/:userId`
 - DELETE account by userId: `/api/users/:userId`
-- POST add contact to account: `/api/users/:userId/friends/:friendId` (Note: `friendId` is a separate `userId`)
+- POST add contact to account: `/api/users/:userId/friends/:friendId`)
 - DELETE contact from account's list: `api/users/:userId/friends/:friendId`
 
 ### Post and Interaction
@@ -84,6 +84,6 @@ To examine the API routes, apply the following endpoints:
 - PUT (edit) post by thoughtId: `/api/thoughts/:thoughtId`
 - DELETE post by thoughtId: `/api/thoughts/:thoughtId`
 - POST add interaction to post: `/api/thoughts/:thoughtId/reactions`
-- DELETE interaction from post's list: `/api/thoughts/:thoughtId/reactions/:reactionId` (Note: `reactionId` differs from `_id`)
+- DELETE interaction from post's list: `/api/thoughts/:thoughtId/reactions/:reactionId`
 
 
