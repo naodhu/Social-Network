@@ -20,8 +20,14 @@ The application will store data in MongoDB, utilizing Mongoose for database oper
 
 ## Useful Links
 
-- [Video Demonstration]()
+- [Video Demonstration](
 - [GitHub Repository]()
+
+## Demo
+
+
+
+
 
 ## Table of Contents
 
@@ -61,8 +67,6 @@ Before exploring the API routes with Insomnia, launch the server using one of th
 ```bash
 npm start
 ```
-
-
 
 To examine the API routes, apply the following endpoints:
 
