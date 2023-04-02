@@ -23,9 +23,14 @@ The application will store data in MongoDB, utilizing Mongoose for database oper
 - [Video Demonstration](https://drive.google.com/file/d/1OMxufnhKiMKmHG6DrOn8T41RHa73WXCv/view?usp=sharing)
 - [GitHub Repository](https://github.com/naodhu)
 
+
 ## Demo
 
-https://drive.google.com/file/d/1eKREaB6-QzeUGSx3GkZ9tAvvYWZQQpfq/view?usp=sharing
+https://user-images.githubusercontent.com/113915529/229328511-4495d67a-a592-458f-8082-0fbc72336a4f.mp4
+
+
+
+
 
 
 
@@ -33,7 +38,6 @@ https://drive.google.com/file/d/1eKREaB6-QzeUGSx3GkZ9tAvvYWZQQpfq/view?usp=shari
 
 1. [Installation](#installation)
 2. [Technologies Employed](#technologies-employed)
-3. [Instructions for Use](#instructions-for-use)
 
 ## Installation
 
@@ -68,26 +72,6 @@ Before exploring the API routes with Insomnia, launch the server using one of th
 npm start
 ```
 
-To examine the API routes, apply the following endpoints:
 
-### Account and Contacts
-
-- GET all accounts: `/api/users`
-- GET account by userId: `/api/users/:userId`
-- POST (create) new account: `/api/users`
-- PUT (edit) account by userId: `/api/users/:userId`
-- DELETE account by userId: `/api/users/:userId`
-- POST add contact to account: `/api/users/:userId/friends/:friendId`)
-- DELETE contact from account's list: `api/users/:userId/friends/:friendId`
-
-### Post and Interaction
-
-- GET all posts: `/api/thoughts`
-- GET post by thoughtId: `/api/thoughts/:thoughtId`
-- POST (create) new post: `/api/thoughts`
-- PUT (edit) post by thoughtId: `/api/thoughts/:thoughtId`
-- DELETE post by thoughtId: `/api/thoughts/:thoughtId`
-- POST add interaction to post: `/api/thoughts/:thoughtId/reactions`
-- DELETE interaction from post's list: `/api/thoughts/:thoughtId/reactions/:reactionId`
 
 
