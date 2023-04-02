@@ -6,16 +6,16 @@ const moment = require("moment");
 const ReactionSchema = new Schema(
   {
     reactionId: {
-      type: Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId, // Use the ObjectId data type
       default: () => new Schema.Types.ObjectId(), // Generate a new ObjectId by default
     },
     reactionBody: {
-      type: String,
+      type: String, // Reaction body is a string
       required: true, // Reaction body is required
       maxLength: 280, // Reaction body has a maximum length of 280 characters
     },
     username: {
-      type: String,
+      type: String, // Username is a string
       required: true, // Username is required
     },
     createdAt: {
@@ -28,7 +28,7 @@ const ReactionSchema = new Schema(
     toJSON: {
       getters: true, // Enable getters for JSON serialization
     },
-    id: false,
+    id: false, // Prevent virtuals from creating duplicate of _id as `id`
   }
 );
 

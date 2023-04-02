@@ -7,18 +7,18 @@ const ReactionSchema = require("./Reaction");
 const ThoughtSchema = new Schema(
   {
     thoughtText: {
-      type: String,
+      type: String, // Thought text is a string
       required: true, // Thought text is required
       minLength: 1, // Thought text has a minimum length of 1 character
       maxLength: 280, // Thought text has a maximum length of 280 characters
     },
     createdAt: {
-      type: Date,
+      type: Date, // Use the Date data type
       default: Date.now, // Set the current date and time by default
       get: (timestamp) => moment(timestamp).format("MMM DD, YYYY [at] hh:mm a"), // Format the createdAt timestamp
     },
     username: {
-      type: String,
+      type: String, // Username is a string
       required: true, // Username is required
     },
     reactions: [ReactionSchema], // Embed the Reaction schema as an array
@@ -28,7 +28,7 @@ const ThoughtSchema = new Schema(
       virtuals: true, // Enable virtual properties for JSON serialization
       getters: true, // Enable getters for JSON serialization
     },
-    id: false,
+    id: false, // Prevent virtuals from creating duplicate of _id as `id`
   }
 );
 
@@ -42,7 +42,7 @@ ThoughtSchema.set("toObject", { virtuals: true });
 ThoughtSchema.set("toJSON", { virtuals: true });
 
 // Create the Thought model based on the Thought schema
-const Thought = model("Thought", ThoughtSchema);
+const Thought = model("Thought", ThoughtSchema); 
 
 // Export the Thought model
 module.exports = Thought;

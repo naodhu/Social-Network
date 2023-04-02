@@ -12,16 +12,16 @@ const UserSchema = new Schema(
       trim: true, // Trim any leading/trailing whitespace
     },
     email: {
-      type: String,
+      type: String, // Email is a string
       required: true, // Email is required
       unique: true, // Ensure unique email addresses
-      // match: [/.+@.+\..+/, "Must match a valid email address"], // Validate email format
       validate: {
+        // Validate email format
         validator: function (value) {
           return;
-          /.+@.+\..+/.test(value);
+          /.+@.+\..+/.test(value); // Return true if the email format is valid
         },
-        message: "Invalid email format!",
+        message: "Invalid email format!", // Return this message if the email format is invalid
       },
     },
     thoughts: [
