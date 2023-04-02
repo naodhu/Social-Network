@@ -20,12 +20,12 @@ The application will store data in MongoDB, utilizing Mongoose for database oper
 
 ## Useful Links
 
-- [Video Demonstration](
-- [GitHub Repository]()
+- [Video Demonstration](https://drive.google.com/file/d/1OMxufnhKiMKmHG6DrOn8T41RHa73WXCv/view?usp=sharing)
+- [GitHub Repository](https://github.com/naodhu)
 
 ## Demo
 
-
+https://drive.google.com/file/d/1eKREaB6-QzeUGSx3GkZ9tAvvYWZQQpfq/view?usp=sharing
 
 
 
